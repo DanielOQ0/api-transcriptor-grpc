@@ -11,7 +11,10 @@ class AudioService(transmision_pb2_grpc.AudioServiceServicer):
             print(request.usuario)
             print(request.audio_chunk[:10])
             #guardarAudioBytes(request.audio_chunk, request.frecuencia)
-            # Aquí puedes realizar el procesamiento del audio y obtener la transcripción
-            resWhisper = transcribirWhisper(request.audio_chunk, request.frecuencia)
-            # Simplemente como ejemplo, devolvemos una respuesta fija
+            # Procesamiento de audio con whiper
+            try:
+               resWhisper = transcribirWhisper(request.audio_chunk, request.frecuencia) 
+               print("Transcripcion exitosa")
+            except Exception as e:
+                print(f"Error inesperado: {e}")
             yield transmision_pb2.AudioReply(transcripcion=resWhisper.texto)

@@ -20,7 +20,7 @@ La siguiente aplicacion permite la transmision de datos de audio desde un client
 
 
 
-## Installation
+## Instalacion
 
 Tener instalado al menos python 3.10.12
 
