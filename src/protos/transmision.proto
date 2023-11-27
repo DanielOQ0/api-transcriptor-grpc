@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package transmision;
+
+option java_multiple_files = true;
+option java_package = "com.fcv.transmision";
+option java_outer_classname = "TransmisionProto";
+option objc_class_prefix = "RTG";
+
+service AudioService {
+  rpc RouteStreamAudio(stream AudioRequest) returns (stream AudioReply);
+}
+
+message AudioRequest {
+    string usuario = 1;
+    bytes audio_chunk = 2;
+    int32 frecuencia = 3;
+}
+
+message AudioReply {
+    string transcripcion = 1;
+}
