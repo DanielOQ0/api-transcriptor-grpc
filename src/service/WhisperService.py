@@ -5,7 +5,7 @@ from src.protocode import transcribir_pb2_grpc
 
 def transcribirWhisper(audio, frecuencia):
     # Conectarse al servidor
-    channel = grpc.insecure_channel("35.247.232.121:50051")
+    channel = grpc.insecure_channel("35.247.96.141:50051")
     stub = transcribir_pb2_grpc.GreeterStub(channel)
 
     # Crear la solicitud
