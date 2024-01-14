@@ -1,0 +1,27 @@
+# Define la versión de composer a utilizar
+version: "3.3"
+# Servicios por subir
+services:
+  # Nombre del servicio
+  API-TRANSCRIPTOR-GRPC:
+    # Imagen del contenedor a utilizar
+    image: api-transcriptor-grpc:1.0.0
+    # Nombre del contenedor
+    container_name: API-TRANSCRIPTOR-GRPC
+    # Sube el contenedor cuando se apaga de manera inesperada
+    restart: always
+    # Variables
+    environment:
+      # Definir la zona de horario
+      - TZ=America/Bogota
+    # Puerto de la aplicación
+    ports:
+      - "50052:50052"
+    networks:
+      # Subred para el contenedor
+      - subred_fcv_01
+# Configuración de la subred
+networks:
+  subred_fcv_01:
+    external:
+      name: subred_fcv_01
