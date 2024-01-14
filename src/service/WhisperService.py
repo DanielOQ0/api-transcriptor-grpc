@@ -10,7 +10,7 @@ def transcribirWhisper(audio, frecuencia):
 
     # Crear la solicitud
     request = transcribir_pb2.TranscribirRequest(
-        modelo="small", 
+        modelo="default", 
         tamLote=16, 
         tipoComputo="float16", 
         dispositivo="cuda", 
