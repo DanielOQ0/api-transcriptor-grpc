@@ -1,6 +1,6 @@
 
 # API TRANSCRIPTOR GRPC
-La siguiente aplicacion permite la transmision de datos de audio desde un cliente para consumir el servicio de whisper.
+La siguiente api permite la transmision de datos de audio desde un cliente para consumir el microservicio de whisper.
 
 
 
@@ -9,14 +9,14 @@ La siguiente aplicacion permite la transmision de datos de audio desde un client
 #### Envio de fragmento de datos de audio en chunk de bytes
 
 ```http
-  GRPC /
+  GRPC rpc RouteStreamAudio
 ```
 
-| Parameter | Type     | Description                |
+| Parámetro | Tipo     | Descripción                |
 | :-------- | :------- | :------------------------- |
-| `usuario` | `string` | **Required**. Nombre del usuario que realiza la conexion |
-| `audio_chunk` | `bytes` | **Required**. Chunk de bytes del audio |
-| `frecuencia` | `number` | **Required**. Frecuencia de muestreo del audio |
+| `usuario` | `string` | **Requerido**. Nombre del usuario que realiza la conexion |
+| `audio_chunk` | `bytes` | **Requerido**. Chunk de bytes del audio |
+| `frecuencia` | `number` | **Requerido**. Frecuencia de muestreo del audio |
 
 
 
